@@ -1,0 +1,41 @@
+* {    margin: 0;    padding: 0;    outline: none;}
+  :root{    --color-primary:#16384c;    --color-secondary:#fff;
+            --font-primary:Tanha;  }
+  @font-face {
+    font-family: Tanha;
+    src: url(fonts/eot/Tanha-FD.eot), url(fonts/ttf/Tanha-FD.eot),
+    url(fonts/woff/Tanha-FD.woff),    url(fonts/woff2/Tanha-FD.woff2);
+  }
+  body {    font-family:var(--font-primary),'Roboto', sans-serif;    background-color: var(--color-primary);}
+  .container{    position: relative; display: flex; 
+    justify-content: center; align-items: center;    height: 100vh; width: 100%;
+  }
+  .card{    position: relative;    width: 350px;    color: var(--color-primary);
+    background-color: var(--color-secondary);    margin: 30px 10px;    display: flex;
+    flex-direction: column;    box-shadow: 0 5px 10px rgb(0 0 0 / 50%);
+    transition: 0.4s ease-in-out;    height: auto;
+  }
+  .card:hover{    cursor: pointer;  }
+  .imgbx{    position: relative;    width: 100%;    height: 380px;    overflow: hidden;
+    display: flex;    z-index: 1;    justify-content: center;
+  }
+  .imgbx::before{    content: '';    width: 100%;    height: 100%;    position: absolute;
+    background-color: rgba(0, 0, 0, .3);
+  }
+  .imgbx img{    width: 100%;    transition: .3s ease-in-out;  }
+  .card:hover .imgbx img{    transform: scale(1.2);  }
+  .content{    position: absolute; padding: 10px; text-align: center;
+    transition: .4s ease-in-out;  width: 80%; bottom: -20px; left: 6%; z-index: 10;
+    border: 1px solid var(--color-secondary);backdrop-filter: blur(45px);
+    opacity: .6;    overflow: hidden;
+  }
+  .card:hover .content{    opacity: 1;  background-color: var(--color-secondary);}
+  .content h1{  font-size: 24pt;    margin:0  0 10px 0;  }
+  .content h2{    margin-bottom: 20px;    font-size: 10pt;}
+  .content  .social{    width: 100%;    display: flex;    justify-content: center;
+    align-items: center; margin-bottom: -30px; transition: .5s ease-in-out;
+  }
+  .card:hover .social{    margin-bottom: 0;  }
+  .content  .social ul{    width: 100%;    display: flex;    list-style: none;
+    justify-content: space-around;    align-items: center;
+  }
